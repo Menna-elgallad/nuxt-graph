@@ -1,0 +1,21 @@
+# Write your query or mutation here
+query allusers {
+  users {
+    id
+    email
+    todos {
+      content
+    }
+  }
+}
+
+query usertodo($id: Int!) {
+  user(id: $id) {
+    id
+    email
+    todos {
+      content
+      id
+    }
+  }
+}

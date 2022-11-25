@@ -1,0 +1,21 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "nuxi dev",
+        "build": "nuxi build",
+        "prepare": "nuxi prepare",
+        "start": "nuxi preview"
+    },
+    "devDependencies": {
+        "nuxt": "^3.0.0",
+        "pug": "^3.0.2",
+        "pug-plain-loader": "^1.1.0",
+        "sass": "^1.56.1",
+        "sass-loader": "^10.3.1",
+        "vue-i18n": "^9.2.2"
+    },
+    "dependencies": {
+        "bootstrap": "^5.2.2",
+        "nuxt-graphql-client": "^0.2.13"
+    }
+}

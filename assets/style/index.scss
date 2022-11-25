@@ -1,0 +1,93 @@
+@import "./bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Hind+Madurai:wght@400;600;700&display=swap');
+* {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: $main-color;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.slide-enter-from {
+    transform: translatey(-40px);
+    opacity: 0;
+}
+
+.slide-enter-to {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-enter-active {
+    transition: all 0.2s ease-out;
+}
+
+.slide-leave-from {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-leave-to {
+    transform: translatey(-40px);
+    opacity: 0;
+}
+
+.slide-leave-active {
+    transition: all 0.2s ease-out;
+}
+
+.primary-button {
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.8rem;
+    background-color: $main-color;
+    border: none;
+    outline: none;
+    color: white;
+    transition: 0.5s ease;
+    &:hover {
+        box-shadow: 0 0 8px #e7bdae;
+        transform: scale(1.1);
+    }
+}
+
+input[type="text"] {
+    padding: 0.5rem 3rem;
+    outline: none;
+    border: none;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+.page-enter-active,
+.page-leave-active {
+    transition: all 0.4s;
+}
+
+.page-enter-from,
+.page-leave-to {
+    opacity: 0;
+    filter: blur(1rem);
+}

@@ -1,0 +1,16 @@
+# Write your query or mutation here
+
+mutation InsertTodos($createTodoInput: CreateTodoInput!) {
+  createTodo(createTodoInput: $createTodoInput) {
+    id
+    content
+    createdAt
+  }
+}
+
+# Write your query or mutation here
+mutation remove($id: Int!) {
+  removeTodo(id: $id) {
+    message
+  }
+}
