@@ -1,5 +1,6 @@
 <template lang="pug">
 .home.container-fluiid
+  sign(v-if="!mytoken")
   .container
     .text 
         h1 {{$t("advice")}}
@@ -8,8 +9,17 @@
 
 </template>
 
-<script>
-export default {};
+<script lang="ts" setup>
+let mytoken = ref("");
+if (process.client) {
+  const token = localStorage.getItem("token");
+  console.log("tokkk", token);
+  mytoken.value = token;
+}
+watch(mytoken, (curr, old) => {
+  console.log("curr", curr);
+});
+console.log("mytoken", mytoken.value);
 </script>
 
 <style lang="scss" scoped>

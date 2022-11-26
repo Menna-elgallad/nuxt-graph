@@ -42,10 +42,11 @@ console.log("getted todos", myalltodos.value);
 
 async function inserttodo() {
   console.log("todovalue", todo.value);
-  useGqlToken(`${apiToken}`);
+
   myalltodos.value.forEach(item => {
     item.newAdded = false;
   });
+  useGqlToken(`${apiToken}`);
   const { data, error } = await useAsyncGql({
     operation: "InsertTodos",
     variables: { createTodoInput: { content: todo.value } }

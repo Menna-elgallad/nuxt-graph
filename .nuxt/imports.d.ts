@@ -4,5 +4,5 @@ export { useAsyncData, useLazyAsyncData, refreshNuxtData, clearNuxtData, defineN
 export { onBeforeRouteLeave, onBeforeRouteUpdate, useLink } from 'vue-router';
 export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId, onActivated, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onDeactivated, onErrorCaptured, onMounted, onRenderTracked, onRenderTriggered, onServerPrefetch, onUnmounted, onUpdated, computed, customRef, isProxy, isReactive, isReadonly, isRef, markRaw, proxyRefs, reactive, readonly, ref, shallowReactive, shallowReadonly, shallowRef, toRaw, toRef, toRefs, triggerRef, unref, watch, watchEffect, isShallow, effect, effectScope, getCurrentScope, onScopeDispose, defineComponent, defineAsyncComponent, resolveComponent, getCurrentInstance, h, inject, nextTick, provide, useAttrs, useCssModule, useCssVars, useSlots, useTransitionState } from 'vue';
 export { useGqlHeaders, useGqlToken, useGqlCors, useGqlHost, useGql, useGqlError, useAsyncGql } from '../node_modules/nuxt-graphql-client/dist/runtime/composables/index';
-export { GqlInsertTodos, GqlAllusers, GqlRemove, GqlUsertodo } from '#gql';
+export { GqlInsertTodos, GqlAllusers, GqlLogin, GqlRemove, GqlSign, GqlUsertodo } from '#gql';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

@@ -3,7 +3,7 @@
 .mycard.mt-5
     .title.d-flex.align-items-center(style="gap:20px")
         img(src="../img/user.png" width="50px" )
-        h2 {{$t("name")}} :  
+        h2 {{$t("Mail")}} :  
             p.mt-2 {{name}}
     .todos 
         .d-flex.align-items-center(style="gap:20px")

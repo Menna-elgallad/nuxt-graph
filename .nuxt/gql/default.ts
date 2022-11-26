@@ -30,6 +30,20 @@ export type UpdateTodoInput = {
   id: Scalars['Float'];
 };
 
+export type LoginMutationVariables = Exact<{
+  input: LoginInput;
+}>;
+
+
+export type LoginMutation = { login: { token: string } };
+
+export type SignMutationVariables = Exact<{
+  input: LoginInput;
+}>;
+
+
+export type SignMutation = { signUp: { token: string } };
+
 export type InsertTodosMutationVariables = Exact<{
   createTodoInput: CreateTodoInput;
 }>;
@@ -57,6 +71,20 @@ export type UsertodoQueryVariables = Exact<{
 export type UsertodoQuery = { user: { id: number, email: string, todos?: Array<{ content: string, id: number }> | null } };
 
 
+export const LoginDocument = gql`
+    mutation login($input: LoginInput!) {
+  login(input: $input) {
+    token
+  }
+}
+    `;
+export const SignDocument = gql`
+    mutation sign($input: LoginInput!) {
+  signUp(input: $input) {
+    token
+  }
+}
+    `;
 export const InsertTodosDocument = gql`
     mutation InsertTodos($createTodoInput: CreateTodoInput!) {
   createTodo(createTodoInput: $createTodoInput) {
@@ -104,6 +132,12 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
+    login(variables: LoginMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LoginMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LoginMutation>(LoginDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'login', 'mutation');
+    },
+    sign(variables: SignMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<SignMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SignMutation>(SignDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'sign', 'mutation');
+    },
     InsertTodos(variables: InsertTodosMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<InsertTodosMutation> {
       return withWrapper((wrappedRequestHeaders) => client.request<InsertTodosMutation>(InsertTodosDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'InsertTodos', 'mutation');
     },

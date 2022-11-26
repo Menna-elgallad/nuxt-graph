@@ -6,17 +6,20 @@
               div.d-flex.align-items-center
                   img(src="../img/logo.png")
                   h2 {{$t("logo")}}
+                  
           .links.d-flex 
               ul.d-flex.justify-content-between(style="gap:5px")
                   li.px-4: nuxt-link(to="/")  {{$t('home')}}
                   li.px-4: nuxt-link(to="/todos")   {{$t('todos')}}     
                   li.px-4: nuxt-link(to="/users")   {{$t('users')}}
-          .end        
+          .end    
+             
               label(for="locale-select"): img(src="../img/world.svg") 
               select(id="locale-select"  v-model="$i18n.locale" @change="addtolocal()")
                   option(value="en" selected name="lang") English
                   option(value="ar" name="lang" ) العربية  
-
+              button.primary-button.ms-2(@click="logout()") Log out    
+             
   .mobilenav.d-none
       .nav.py-4.position-relative
           .container.position-relative
@@ -38,7 +41,7 @@
                           select(id="locale-select"  v-model="$i18n.locale" @change="addtolocal()")
                               option(value="en" selected) English
                               option(value="ar") العربية  
-
+                      button.primary-button(@click="logout()" v-if="mytoken") log out
                       a.close(@click="showside()"): img(src="../img/cancel.svg" style="width:40px")      
 
 </template>
@@ -52,6 +55,14 @@ function addtolocal() {
 const menu = ref(false);
 function showside() {
   menu.value = !menu.value;
+}
+let mytoken = ref("");
+if (process.browser) {
+  const token = localStorage.getItem("token");
+  mytoken.value = token;
+}
+function logout() {
+  localStorage.removeItem("token");
 }
 </script>
 

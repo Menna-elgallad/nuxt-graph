@@ -3,7 +3,9 @@ export {}
 declare global {
   const GqlAllusers: typeof import('../gql')['GqlAllusers']
   const GqlInsertTodos: typeof import('../gql')['GqlInsertTodos']
+  const GqlLogin: typeof import('../gql')['GqlLogin']
   const GqlRemove: typeof import('../gql')['GqlRemove']
+  const GqlSign: typeof import('../gql')['GqlSign']
   const GqlUsertodo: typeof import('../gql')['GqlUsertodo']
   const abortNavigation: typeof import('../../node_modules/nuxt/dist/app')['abortNavigation']
   const addRouteMiddleware: typeof import('../../node_modules/nuxt/dist/app')['addRouteMiddleware']
@@ -120,7 +122,9 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly GqlAllusers: UnwrapRef<typeof import('../gql')['GqlAllusers']>
     readonly GqlInsertTodos: UnwrapRef<typeof import('../gql')['GqlInsertTodos']>
+    readonly GqlLogin: UnwrapRef<typeof import('../gql')['GqlLogin']>
     readonly GqlRemove: UnwrapRef<typeof import('../gql')['GqlRemove']>
+    readonly GqlSign: UnwrapRef<typeof import('../gql')['GqlSign']>
     readonly GqlUsertodo: UnwrapRef<typeof import('../gql')['GqlUsertodo']>
     readonly abortNavigation: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['abortNavigation']>
     readonly addRouteMiddleware: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['addRouteMiddleware']>
